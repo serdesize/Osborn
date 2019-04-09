@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FD78839322174BF200BDDD6B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD78839222174BF200BDDD6B /* main.cpp */; };
+		FD78839322174BF200BDDD6B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD78839222174BF200BDDD6B /* main.cpp */; settings = {COMPILER_FLAGS = "-lglfw3 "; }; };
 		FD78839922174C5900BDDD6B /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD78839822174C5900BDDD6B /* OpenGL.framework */; };
-		FD78839B22174C6000BDDD6B /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD78839A22174C6000BDDD6B /* GLUT.framework */; };
-		FD78839E22174C7900BDDD6B /* Osborn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD78839D22174C7800BDDD6B /* Osborn.cpp */; };
+		FD78839E22174C7900BDDD6B /* Osborn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD78839D22174C7800BDDD6B /* Osborn.cpp */; settings = {COMPILER_FLAGS = "-lglfw3"; }; };
+		FD86127E225D54A100B920E5 /* libglfw.3.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FD86127D225D54A100B920E5 /* libglfw.3.2.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,12 +26,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		FD78839022174BF200BDDD6B /* Osborn */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = Osborn; path = /Users/serdesize/Projects/Osborn/build/Debug/Osborn; sourceTree = "<absolute>"; };
 		FD78839222174BF200BDDD6B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		FD78839822174C5900BDDD6B /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
-		FD78839A22174C6000BDDD6B /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		FD78839C22174C7800BDDD6B /* Osborn.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Osborn.hpp; sourceTree = "<group>"; };
 		FD78839D22174C7800BDDD6B /* Osborn.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Osborn.cpp; sourceTree = "<group>"; };
+		FD861276225D2A0200B920E5 /* Osborn */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Osborn; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD86127D225D54A100B920E5 /* libglfw.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.2.dylib; path = Osborn/ext/libglfw.3.2.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,7 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD78839B22174C6000BDDD6B /* GLUT.framework in Frameworks */,
+				FD86127E225D54A100B920E5 /* libglfw.3.2.dylib in Frameworks */,
 				FD78839922174C5900BDDD6B /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -52,6 +52,7 @@
 			children = (
 				FD78839122174BF200BDDD6B /* Osborn */,
 				FD78839722174C5900BDDD6B /* Frameworks */,
+				FD861276225D2A0200B920E5 /* Osborn */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,7 +70,7 @@
 		FD78839722174C5900BDDD6B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FD78839A22174C6000BDDD6B /* GLUT.framework */,
+				FD86127D225D54A100B920E5 /* libglfw.3.2.dylib */,
 				FD78839822174C5900BDDD6B /* OpenGL.framework */,
 			);
 			name = Frameworks;
@@ -99,7 +100,7 @@
 			);
 			name = Osborn;
 			productName = Osborn;
-			productReference = FD78839022174BF200BDDD6B /* Osborn */;
+			productReference = FD861276225D2A0200B920E5 /* Osborn */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -161,7 +162,7 @@
 		FD78839522174BF200BDDD6B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -210,6 +211,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib,
+					"$(PROJECT_DIR)/src/Debug",
+					"$(PROJECT_DIR)/Osborn/ext",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -222,7 +229,7 @@
 		FD78839622174BF200BDDD6B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -265,6 +272,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib,
+					"$(PROJECT_DIR)/src/Debug",
+					"$(PROJECT_DIR)/Osborn/ext",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
